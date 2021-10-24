@@ -27,7 +27,7 @@
 }
 
 body {
-  background: #3b1f2b;
+  background: #101010;
 }
 
 .showcase {
@@ -75,65 +75,77 @@ header a:hover {
 
 .back {
   padding: 2rem;
-  background: #307230;
+  background: #000;
   width: 70%;
   /* transform: rotate3d(1, -1, 0, 20deg); */
 }
 
 .about {
-  background: #053225;
+  background: #000;
   padding: 4rem 1rem;
   overflow: hidden;
 }
 
-.about .container,
+
 .projects .container {
-  border: 1px solid #dfdfdf;
   width: 100%;
-  display: grid;
-  grid-template-columns: 60% 30%;
   padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background: #212121;
+  border: 1px dashed #dfdfdf;
+  border-radius: 10px;
 }
 
 .about .container {
-  background: #60a561;
+  background: #212121;
+  border: 1px dashed #dfdfdf;
+  border-radius: 10px;
+  padding: 1rem;
 }
 
 .about p {
   margin: auto;
-  padding: 1rem;
+  padding: 1rem 1rem 0 1rem;
   font-size: 1.3rem;
   letter-spacing: 1.5px;
   text-align: justify;
   transform: translateX(-200%);
 }
 
+.line {
+  margin: 2rem 1rem;
+  border: 1px dashed #7e7e7e;
+}
+
 .stack-logos {
+  width: 100%;
+  margin: 1rem auto !important;
   display: flex;
-  flex-direction: column;
-  transform: translatey(-200%);
+  flex-wrap: wrap;
+  justify-content: center;
+  transform: translateY(-500%);
 }
 
 .stack-item {
   width: 50%;
   padding: 1rem 0;
-  margin: 0 auto;
-  text-align: center;
   display: flex;
+  margin: auto;
   align-items: center;
 }
 
 .stack-item h2 {
-  margin-left: 25%;
-  transform: translateX(-25%);
+  margin-left: 2rem;
 }
 
 .stack-item img {
   width: 5rem;
+  margin-left: 25%;
 }
 
 .projects {
-  background: #1d508a;
+  background: #101010;
   padding: 4rem 1rem;
   display: flex;
   justify-content: flex-end;
@@ -142,13 +154,7 @@ header a:hover {
 
 .projects .back {
   /* transform: rotate3d(-1, -1, 0, 20deg); */
-  background: #2868a1;
-}
-
-.projects .container {
-  display: flex;
-  flex-direction: column;
-  background: #3f7bc0;
+  background: #101010;
 }
 
 .projects .text {
@@ -175,7 +181,8 @@ header a:hover {
   justify-content: center;
   width: 100%;
   flex-grow: 1;
-  border: 1px solid #214140;
+  background: #202020;
+  border: 1px solid #dfdfdf;
   padding: 1rem;
   margin: 0.5rem;
 }
@@ -188,6 +195,7 @@ header a:hover {
 .project h2 {
   font-size: 2rem;
   width: 15rem;
+  text-align: center;
 }
 
 .links {
@@ -229,7 +237,7 @@ header a:hover {
 .socials {
   display: flex;
   justify-content: center;
-  background: #3a2449;
+  background: #212121;
 }
 
 .socials a {
@@ -321,6 +329,22 @@ header a:hover {
   .project h2 {
     width: auto;
   }
+
+  .showcase h1 {
+    font-size: 2.8rem !important;
+  }
+
+  .about p {
+    font-size: 1.6rem;
+  }
+
+  .stack-item img {
+    margin-left: 15% !important;
+  }
+
+  .stack-item h2 {
+    margin-left: 1rem;
+  }
 }
 
 @media only screen and (max-width: 676px) {
@@ -331,6 +355,58 @@ header a:hover {
 
 @media only screen and (max-width: 619px) {
   .showcase h1 {
-    font-size: 2.8rem !important;
+    font-size: 2.6rem !important;
+  }
+
+  .about p {
+    font-size: 1.2rem;
+  }
+
+  .stack-item {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .stack-item img {
+    width: 7rem;
+    margin-left: 0 !important;
+  }
+
+  .stack-item h2 {
+    margin-left: 1rem;
+    font-size: 2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .showcase h1 {
+    font-size: 2.3rem !important;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .showcase h1 {
+    font-size: 2rem !important;
+  }
+
+  .showcase img {
+    width: 5rem;
+  }
+
+  .stack-logos {
+    margin-left: -3rem;
+  }
+
+  .stack-item img {
+    width: 5rem;
+    margin-left: 0 !important;
+  }
+
+  .stack-item h2 {
+    font-size: 1.5rem;
+  }
+
+  header nav {
+    justify-content: center;
   }
 }
