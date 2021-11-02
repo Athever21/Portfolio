@@ -122,6 +122,7 @@ function addLang(text, target) {
     ["typescript", "007acc"],
     ["javascript", "f0db4f "],
     ["go", "2fbdb0"],
+    ["java", "f89820"]
   ];
   const color = colors.find((x) => x[0] === text.toLowerCase());
   circle.style.background = `#${color[1]}`;
