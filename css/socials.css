@@ -1,0 +1,75 @@
+.socials-container {
+  --socials-background: #5b855b;
+}
+
+.socials-container {
+  position: absolute;
+  bottom: 1rem;
+  left: 0;
+  z-index: 12;
+}
+
+.socials {
+  width: 4rem;
+  height: 8rem;
+  position: relative;
+  transition: width 1s ease-in-out;
+}
+
+.toggle-socials {
+  transform: rotate(90deg);
+  transform-origin: bottom left;
+  text-align: center;
+  padding: 0.5rem;
+  font-size: 1.7rem;
+  width: 8rem;
+  margin-left: -4rem;
+  background: var(--socials-background);;
+  border-bottom: 1px solid red;
+  position: absolute;
+  bottom: 100%;
+  left: 100%;
+  border-radius: 5px 5px 0 0;
+  transition: margin 1s ease-in-out;
+}
+
+.toggle-socials:hover {
+  cursor: pointer;
+  background: #3f9c16;
+}
+
+.social-wrapper {
+  background: var(--socials-background);
+  transform-origin: top left;
+  margin-left: -4rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  transition: margin 1s ease-in-out;
+  overflow: hidden;
+}
+
+.socials a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.socials a:first-of-type {
+  border-bottom: 1px solid red;
+}
+
+.socials a h2 {
+  font-size: 0.9rem;
+}
+
+.socials a i {
+  font-size: 2.5rem;
+}
+
+.socials a:hover {
+  background: rgba(225, 225, 255, 0.4);
+}

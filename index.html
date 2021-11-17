@@ -1,90 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/fontello.css" />
-    <link
-      rel="icon"
-      href="https://icons-for-free.com/iconfiles/png/512/Coding-1320568096072194118.png"
-    />
-  </head>
-  <body>
-    <header>
-      <nav>
-        <a data-to="about">About Me</a>
-        <a data-to="projects">Projects</a>
-        <a data-to="socials">Socials</a>
-      </nav>
-    </header>
-    <div class="showcase">
-      <img src="img/js-icon.png" />
-      <h1 class="write"></h1>
-    </div>
-    <main>
-      <div class="about">
-        <div class="back">
-          <div class="container">
-            <p>
-              My name is Paweł Ogórek, I am 21 years old self-taught full-stack web
-              developer. I am interested in web development since middle school.
-              Even though I have never been hired before I might be a good addition
-              to a team. I am open to new challenges and I would love to continue my
-              learning adventure. My main language is JavaScript and my go-to stack
-              is MERN (Mongo, Express, React, Node) and recently I have been learning Go and Java.
-            </p>
-            <hr class="line">
-            <div class="stack-logos">
-              <div class="stack-item">
-                <img src="img/mongo-icon.png"></img>
-                <h2>MongoDB</h2>
-              </div>
-              <div class="stack-item">
-                <img src="img/express-icon.png"></img>
-                <h2>Express</h2>
-              </div>
-              <div class="stack-item">
-                <img src="img/react-icon.png"></img>
-                <h2>React</h2>
-              </div>
-              <div class="stack-item">
-                <img src="img/node-icon.png"></img>
-                <h2>Node</h2>
-              </div>
-              <div class="stack-item">
-                <img src="img/java-icon.png"></img>
-                <h2>Java</h2>
-              </div>
-              <div class="stack-item">
-                <img src="img/go-icon.png"></img>
-                <h2>Go</h2>
-              </div>
-            </div>
-          </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/fontello.css" />
+  <link rel="icon" href="https://icons-for-free.com/iconfiles/png/512/Coding-1320568096072194118.png" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <nav class="site-nav">
+    <i class="fas fa-chevron-left nav-icon to-left"></i>
+    <i class="fas fa-chevron-right nav-icon to-right"></i>
+  </nav>
+  <header>
+    <nav>
+      <a class="header-nav" data-to="1">About Me</a>
+      <a class="header-nav" data-to="2">Projects</a>
+    </nav>
+  </header>
+  <div class="showcase card" data-card="0">
+    <img src="img/js-icon.png" />
+    <h1 class="write"></h1>
+  </div>
+  <main>
+    <div class="about card about-card" data-card="1">
+      <div class="container">
+        <div class="about-background"></div>
+        <div class="about-left">
+          <p class="about-desc">
+            My name is Paweł Ogórek, I am 21 years old self-taught full-stack web
+            developer. I am interested in web development since middle school.
+            Even though I have never been hired before I might be a good addition
+            to a team. I am open to new challenges and I would love to continue my
+            learning adventure. My main language is JavaScript and my go-to stack
+            is MERN (Mongo, Express, React, Node) and recently I have been learning Go and Java.
+          </p>
         </div>
       </div>
-      <div class="projects">
-        <div class="back">
-          <div class="container">
-            <p class="text">Like I mentioned in an about section I was never hired so I can only showcase projects I have done during my learning journey.</p>
-            <div class="fly"></div>
-          </div>
+    </div>
+    <div class="projects card" card-data="2">
+      <div class="projects-container">
+        <p class="text">Like I mentioned in an about section I was never hired so I can only showcase projects I have
+          done during my learning journey.</p>
+        <div class="fly"></div>
       </div>
-    </main>
-    <footer>
-      <nav class="socials">
+  </main>
+  <div class="socials-container">
+    <aside class="socials">
+      <nav class="social-wrapper">
         <a href="https://github.com/Athever21" target="_blank">
           <i class="icon-github-circled"></i>
-          <h2>Github</h2>
+          <!-- <h2>Github</h2> -->
         </a>
         <a href="https://www.linkedin.com/in/pawe%C5%82-og%C3%B3rek-bab9911a0/" target="_blank">
           <i class="icon-linkedin-squared"></i>
-          <h2>LinkedIn</h2>
+          <!-- <h2>LinkedIn</h2> -->
         </a>
       </nav>
-    </footer>
-    <script src="js/main.js"></script>
-  </body>
+      <div class="toggle-socials">SOCIALS</div>
+    </aside>
+  </div>
+  <script src="js/main.js" async="true"></script>
+  <script src="js/nav.js" async="true"></script>
+</body>
+
 </html>

@@ -9,82 +9,39 @@ function type(word) {
 
 type("WEB DEVELOPMENT");
 
-const links = document.querySelectorAll("header nav a");
+let socialsToggle = true;
+document
+  .querySelector(".toggle-socials")
+  .addEventListener("click", ({ target }) => {
+    if (socialsToggle) {
+      document.querySelector(".socials").style.width = "4rem";
+      document.querySelector(".social-wrapper").style.marginLeft = "0";
+      target.style.marginLeft = "0rem";
+    } else {
+      document.querySelector(".social-wrapper").style.marginLeft = "-4rem";
+      target.style.marginLeft = "-4rem";
+    }
 
-for (const link of links) {
-  link.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target = e.target.getAttribute("data-to");
-    const offsetTop = document.querySelector(`.${target}`).offsetTop;
-
-    scroll({
-      top: offsetTop,
-      behavior: "smooth",
-    });
+    socialsToggle = !socialsToggle;
   });
-}
 
-class ScrollEvents {
-  aboutLoaded = false;
-  projectsLoaded = false;
+const displayRepos = async () => {
+  const repos = await (
+    await fetch("https://api.github.com/users/Athever21/repos")
+  ).json();
+  repos.reverse().forEach((rep) => displayRepo(rep));
+};
 
-  loadAbout() {
-    if (!this.aboutLoaded) {
-      const about = document.querySelector(".about");
-      const text = about.querySelector("p");
-      const stack = about.querySelector(".stack-logos");
+displayRepos();
 
-      text.style.animation = "fly-in-left 0.8s ease-in-out";
-      stack.style.animation = "fly-in-down 0.8s ease-in-out";
-      text.style.transform = "translateX(0%)";
-      stack.style.transform = "translateY(0%)";
-      this.aboutLoaded = true;
-    }
-  }
+const projects = document.querySelector(".projects");
+const text = projects.querySelector("p");
 
-  async displayRepos() {
-    const repos = await (
-      await fetch("https://api.github.com/users/Athever21/repos")
-    ).json();
-    repos.reverse().forEach((rep) => displayRepo(rep));
-  }
-
-  async loadProjects() {
-    if (!this.projectsLoaded) {
-      this.projectsLoaded = true;
-      const projects = document.querySelector(".projects");
-      const text = projects.querySelector("p");
-      const fly = projects.querySelector(".fly");
-
-      text.style.animation = "fly-in-right 0.8s ease-in-out";
-      fly.style.animation = "fly-in-down 0.8s ease-in-out";
-      text.style.transform = "translateX(0%)";
-      fly.style.transform = "translateY(0%)";
-    }
-  }
-}
-
-const scrollE = new ScrollEvents();
-scrollE.displayRepos();
-const d = document.documentElement;
-const aboutH = document.querySelector(".about").offsetTop - 400;
-const projectsH = document.querySelector(".projects").offsetTop - 400;
-
-window.addEventListener("scroll", () => {
-  if (d.scrollTop > aboutH) {
-    scrollE.loadAbout();
-  }
-
-  if (d.scrollTop > projectsH) {
-    scrollE.loadProjects();
-  }
-});
 
 const ce = document.createElement.bind(document);
 
 function displayRepo(rep) {
   if (rep.name === "Portfolio") return;
-  console.log(rep);
 
   const fly = document.querySelector(".fly");
   const div = ce("div");
@@ -103,7 +60,6 @@ function displayRepo(rep) {
 
   [h2, links, lang].forEach((x) => div.appendChild(x));
   fly.appendChild(div);
-  console.log(div);
 }
 
 function addLink(href, text, target) {
@@ -123,7 +79,7 @@ function addLang(text, target) {
     ["javascript", "f0db4f "],
     ["go", "2fbdb0"],
     ["java", "f89820"],
-    ["php", "8993be"]
+    ["php", "8993be"],
   ];
   const color = colors.find((x) => x[0] === text.toLowerCase());
   circle.style.background = `#${color[1]}`;
