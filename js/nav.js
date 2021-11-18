@@ -1,5 +1,6 @@
 let curr = 0;
-let currImage = 1;
+let currImage = 0;
+const images = [];
 let cards = document.querySelectorAll(".card");
 let aboutInterval;
 
@@ -41,7 +42,6 @@ function slide(currCard, nextCard, left) {
     currCard.style.marginLeft = left ? "-100%" : "100%";
     nextCard.style.marginLeft = "0";
   }, 1);
-  console.log(aboutInterval);
 }
 
 document.querySelectorAll(".header-nav").forEach((x) =>
@@ -58,6 +58,19 @@ document.querySelectorAll(".header-nav").forEach((x) =>
 );
 
 function aboutStackChange() {
+  aboutInterval = setInterval(() => {
+    const next = currImage == images.length - 1 ? 0 : currImage + 1;
+    const nextImage = images[next];
+    const currImageDiv = images[currImage];
+
+    currImageDiv.style.opacity = '0';
+    nextImage.style.opacity = '0.5';
+
+    currImage = next == 0 ? 0 : next;
+  }, 3500);
+}
+
+function preLoadImages() {
   const stack = [
     ["mongo", "mongo.png"],
     ["react", "react.png"],
@@ -65,12 +78,20 @@ function aboutStackChange() {
     ["java", "java.png"],
     ["go", "go.webp"],
   ];
-  
-  aboutInterval = setInterval(() => {
-    cards[1].querySelector('.about-background').style.backgroundImage = `url(img/${stack[currImage][1]})`;
-    currImage = currImage == stack.length - 1 ? 0 : currImage + 1;
-  }, 3500);
+
+  const parent = document.querySelector('.container');
+
+  for (const s of stack) {
+    const div = document.createElement('div');
+    div.classList.add('about-background');
+    div.style.backgroundImage = `url(img/${s[1]})`;
+    if (s[0] != "mongo") div.style.opacity = '0';
+    parent.appendChild(div);
+    images.push(div);
+  }
 }
+
+preLoadImages();
 
 function aboutAnimations() {
   aboutStackChange();
