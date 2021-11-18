@@ -32,6 +32,14 @@ body {
   align-items: center;
 }
 
+.showcase-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-left: 1rem;
+}
+
 .showcase h1 {
   font-size: 5rem;
   animation: blink 0.5s steps(44) 0s infinite;
@@ -42,7 +50,7 @@ body {
 
 .showcase img {
   width: 6rem;
-  margin-right: 1rem;
+  margin-bottom: .5rem;
 }
 
 .back {
@@ -77,6 +85,7 @@ body {
   width: 80%;
   z-index: 5;
   margin-top: 1rem;
+  margin-left: 3rem;
   overflow: hidden;
 }
 
@@ -153,7 +162,6 @@ body {
 
 .links {
   display: flex;
-
   margin: 1rem auto;
 }
 

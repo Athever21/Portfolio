@@ -1,5 +1,6 @@
 .socials-container {
-  --socials-background: #5b855b;
+  --socials-background: #0e5788;
+  --social-border: #0E887C;
 }
 
 .socials-container {
@@ -23,9 +24,9 @@
   padding: 0.5rem;
   font-size: 1.7rem;
   width: 8rem;
-  margin-left: -4rem;
+  margin-left: -100%;
   background: var(--socials-background);;
-  border-bottom: 1px solid red;
+  border: 1px solid var(--social-border);
   position: absolute;
   bottom: 100%;
   left: 100%;
@@ -35,19 +36,21 @@
 
 .toggle-socials:hover {
   cursor: pointer;
-  background: #3f9c16;
+  background: #1495d1;
 }
 
 .social-wrapper {
   background: var(--socials-background);
   transform-origin: top left;
-  margin-left: -4rem;
+  margin-left: -100%;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   transition: margin 1s ease-in-out;
   overflow: hidden;
+  border: 1px solid var(--social-border);
+  border-right: 0;
 }
 
 .socials a {
@@ -59,7 +62,7 @@
 }
 
 .socials a:first-of-type {
-  border-bottom: 1px solid red;
+  border-bottom: 1px solid var(--social-border);
 }
 
 .socials a h2 {

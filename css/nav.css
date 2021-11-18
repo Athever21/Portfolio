@@ -45,10 +45,10 @@ header a:hover {
   font-size: 3rem;
   margin: 0.5rem;
   padding: 0.5rem;
-  color: #929191;
+  color: #dfdfdf;
 }
 
 .nav-icon:hover {
   cursor: pointer;
-  color: #dfdfdf;
+  color: #fff;
 }

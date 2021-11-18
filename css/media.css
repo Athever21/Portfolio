@@ -21,11 +21,15 @@
 
   .about-left {
     width: 90% !important;
-    margin: 0 auto;
+    margin: 0 auto !important;
   }
 
   .about-background {
     background-size: auto 100% !important;
+  }
+
+  .nav-icon {
+    font-size: 1.8rem !important;
   }
 }
 
@@ -47,19 +51,11 @@
   }
 
   .showcase h1 {
-    font-size: 2.8rem !important;
+    font-size: 3.5rem !important;
   }
 
-  .about p {
-    font-size: 1.6rem;
-  }
-
-  .stack-item img {
-    margin-left: 15% !important;
-  }
-
-  .stack-item h2 {
-    margin-left: 1rem;
+  .showcase img {
+    width: 5rem !important;
   }
 }
 
@@ -73,17 +69,41 @@
   .showcase h1 {
     font-size: 2.6rem !important;
   }
+
+  .socials {
+    width: 3rem;
+    height: 6rem;
+  }
+
+  .toggle-socials {
+    height: 3rem;
+    width: 6rem;
+    font-size: 1.2rem;
+    padding-top: .7rem !important;
+  }
+
+  .socials a i {
+    font-size: 2rem;
+  }
+
+  .showcase img {
+    width: 4rem !important;
+  }
 }
 
 @media only screen and (max-width: 500px) {
   .showcase h1 {
     font-size: 2.3rem !important;
   }
+
+  .showcase img {
+    width: 3.8rem !important;
+  }
 }
 
 @media only screen and (max-width: 450px) {
   .showcase h1 {
-    font-size: 2rem !important;
+    font-size: 1.6rem !important;
   }
 
   .showcase img {
@@ -92,5 +112,26 @@
 
   .fly {
     width: 75% !important; 
+  }
+
+  .socials-container {
+    bottom: 10px;
+  }
+
+  .about-left {
+    width: 85% !important;
+    margin: 1rem auto !important;
+  }
+
+  .about-desc {
+    font-size: 0.8rem !important;
+  }
+
+  .nav-icon {
+    font-size: 2rem !important;
+  }
+
+  .showcase img {
+    width: 3.4rem !important;
   }
 }

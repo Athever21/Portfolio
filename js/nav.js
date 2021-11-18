@@ -1,4 +1,5 @@
 let curr = 0;
+let currImage = 1;
 let cards = document.querySelectorAll(".card");
 let aboutInterval;
 
@@ -40,6 +41,7 @@ function slide(currCard, nextCard, left) {
     currCard.style.marginLeft = left ? "-100%" : "100%";
     nextCard.style.marginLeft = "0";
   }, 1);
+  console.log(aboutInterval);
 }
 
 document.querySelectorAll(".header-nav").forEach((x) =>
@@ -56,7 +58,6 @@ document.querySelectorAll(".header-nav").forEach((x) =>
 );
 
 function aboutStackChange() {
-  let currColor = 1;
   const stack = [
     ["mongo", "mongo.png"],
     ["react", "react.png"],
@@ -66,9 +67,9 @@ function aboutStackChange() {
   ];
   
   aboutInterval = setInterval(() => {
-    cards[1].querySelector('.about-background').style.backgroundImage = `url(img/${stack[currColor][1]})`;
-    currColor = currColor == stack.length - 1 ? 0 : currColor + 1;
-  }, 2500);
+    cards[1].querySelector('.about-background').style.backgroundImage = `url(img/${stack[currImage][1]})`;
+    currImage = currImage == stack.length - 1 ? 0 : currImage + 1;
+  }, 3500);
 }
 
 function aboutAnimations() {
@@ -77,7 +78,8 @@ function aboutAnimations() {
 }
 
 function cancelAboutAnimations() {
-  clearInterval(aboutInterval);
+  console.log(clearInterval(aboutInterval));
+  aboutInterval = null;
   cards[1].querySelector('.about-desc').style.transform = "translateY(200%)";
 }
 

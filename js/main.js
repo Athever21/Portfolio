@@ -14,12 +14,11 @@ document
   .querySelector(".toggle-socials")
   .addEventListener("click", ({ target }) => {
     if (socialsToggle) {
-      document.querySelector(".socials").style.width = "4rem";
       document.querySelector(".social-wrapper").style.marginLeft = "0";
-      target.style.marginLeft = "0rem";
+      target.style.marginLeft = "0";
     } else {
-      document.querySelector(".social-wrapper").style.marginLeft = "-4rem";
-      target.style.marginLeft = "-4rem";
+      document.querySelector(".social-wrapper").style.marginLeft = "-100%";
+      target.style.marginLeft = "-100%";
     }
 
     socialsToggle = !socialsToggle;
